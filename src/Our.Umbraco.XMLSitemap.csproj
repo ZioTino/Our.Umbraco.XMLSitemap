@@ -25,5 +25,7 @@
             <Pack>True</Pack>
             <PackagePath>buildTransitive</PackagePath>
         </None>
+        <None Remove="Migrations\package.zip" />
+        <EmbeddedResource Include="Migrations\package.zip" />
     </ItemGroup>
 </Project>
