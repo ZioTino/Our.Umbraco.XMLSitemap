@@ -17,12 +17,12 @@ using Umbraco.Extensions;
 
 namespace Our.Umbraco.XMLSitemap.Controllers
 {
-    public class XMLSitemapController : RenderController
+    public class XMLSitemapControllerBase : RenderController
     {
         private IPublishedContent _rootNode;
         private string _excludedDocumentTypes;
 
-        public XMLSitemapController(
+        public XMLSitemapControllerBase(
             ILogger<RenderController> logger, 
             ICompositeViewEngine compositeViewEngine, 
             IUmbracoContextAccessor umbracoContextAccessor) 
@@ -34,9 +34,11 @@ namespace Our.Umbraco.XMLSitemap.Controllers
         {
             _rootNode = CurrentPage.Value<IPublishedContent>(Constants.Configuration.SitemapRootNodeDataTypeName);
             if (_rootNode == null)
+                _rootNode = UmbracoContext.Content.GetAtRoot().First();
+            if (_rootNode == null)
                 throw new ArgumentNullException("The Root Node value must be set for the XML Sitemap!");
 
-            _excludedDocumentTypes = CurrentPage.Value<string>(Constants.Configuration.SitemapExcludedDocTypesDataTypeName).ToLower();
+            _excludedDocumentTypes = CurrentPage.Value<string>(Constants.Configuration.SitemapExcludedDocTypesDataTypeName)?.ToLower();
 
             XmlSitemap sitemap = new XmlSitemap();
             if (!string.IsNullOrWhiteSpace(_excludedDocumentTypes))

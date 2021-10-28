@@ -1,6 +1,6 @@
 namespace Our.Umbraco.XMLSitemap
 {
-    internal class Constants
+    public class Constants
     {
         public const string PluginName = "Our.Umbraco.XMLSitemap";
 
