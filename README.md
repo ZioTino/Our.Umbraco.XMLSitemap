@@ -1,5 +1,5 @@
 # Our.Umbraco.XMLSitemap
-An Umbraco 9 package for creating XML sitemaps for your website.
+An Umbraco 10 package for creating XML sitemaps for your website.
 
 ## Installation
 ```
@@ -11,7 +11,10 @@ The package includes two `Document Type`s, used to configure the sitemap (or mor
 
 ### `XMLSitemapSettings` Document Type
 This document type is used only as a composition, to control how each page is displayed inside the sitemap.  
-XMLSitemapSettings is created using the new tabs feature available in v9. If you want to step out of it, the only thing you have to do is refactor the **same** document type outside of a tab.
+XMLSitemapSettings is created using the new tabs feature available in v10. If you want to step out of it, the only thing you have to do is refactor the **same** document type outside of a tab.
+
+#### `MetaMomentum` Support
+If MetaMomentum is installed the content property "Search Engine Visibility" set if is showing in the sitemap
 
 #### `XMLSitemapSettings` Properties
 | Property | Relative property in sitemap XML | Default value | How it works? |
@@ -32,7 +35,7 @@ Hooray! You successfully added the `XMLSitemapSettings` composition to your docu
 ![Step 3](assets/docs/xmlsitemapsettings-step3.png?raw=true)
 
 #### `XMLSitemapSettings` Additional informations
-Keep in mind that **every content item that don't have the `XmlSitemapSettings` composition in its document type will be automatically included in the sitemap with default setttings**.  
+Keep in mind that **every content item that don't have the `XmlSitemapSettings` composition in its document type will be automatically included in the sitemap with default settings**.  
 
 ### `XMLSitemap` Document type
 This document type is used to create the sitemap. **You can create more than one sitemap** based on your needs, specifying the root node from where the sitemap begins (usually the root node is a top-level node or a node that has at least one hostname set).
@@ -41,7 +44,8 @@ This document type is used to create the sitemap. **You can create more than one
 | Property | Description | How it works? |
 | -- | -- | -- |
 | **Excluded Document Types** | A comma delimited list of document type alias to exclude from the XML Sitemap. | Every document type alias that is listed here will be **completely excluded** from the sitemap. |
-| **Root Node** | The main node from which to start the XML Sitemap. This node is usually a top-level node or a node that has a hostname set. | Every child node under the root node (and the root node itself too) will be included in the sitemap. |  
+| **Root Node** | The main node from which to start the XML Sitemap. This node is usually a top-level node or a node that has a hostname set. | Every child node under the root node (and the root node itself too) will be included in the sitemap. | 
+| **Default Change frequency** | The default value of changefreq if not set the default value is weekly. |  
 
 #### `XMLSitemap` Usage
 The usage of the `XMLSitemap` Document type is simple. You just need to create a new content item of this type, configure it and you will be all set!  

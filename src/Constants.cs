@@ -6,11 +6,13 @@ namespace Our.Umbraco.XMLSitemap
 
         public class Configuration
         {
-            public const string SitemapHideDataTypeName = "XMLSitemap.Hide";
-            public const string SitemapChangeFreqDataTypeName = "XMLSitemap.Changefreq";
-            public const string SitemapPriorityDataTypeName = "XMLSitemap.Priority";
-            public const string SitemapExcludedDocTypesDataTypeName = "XMLSitemap.ExcludedDocTypes";
-            public const string SitemapRootNodeDataTypeName = "XMLSitemap.RootNode";
+            public const string SitemapExcludedDocTypesDataTypeName = "XMLSitemapExcludedDocTypes";
+            public const string SitemapRootNodeDataTypeName = "XMLSitemapRootNode";
+            public const string SitemapChangeFreqDefaultDataTypeName = "XMLSitemapChangefreqDefault";
+
+            public const string SitemapHideDataTypeName = "XMLSitemapHide";
+            public const string SitemapChangeFreqDataTypeName = "XMLSitemapChangefreq";
+            public const string SitemapPriorityDataTypeName = "XMLSitemapPriority";
         }
     }
 }

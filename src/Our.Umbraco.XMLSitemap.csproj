@@ -1,14 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
         <ContentTargetFolders>.</ContentTargetFolders>
         <Product>Our.Umbraco.XMLSitemap</Product>
         <PackageId>Our.Umbraco.XMLSitemap</PackageId>
         <Title>Our.Umbraco.XMLSitemap</Title>
         <Description>...</Description>
-        <Product>...</Product>
         <PackageTags>umbraco plugin package</PackageTags>
+        <Version>1.0.5</Version>
+        <Authors>ZioTino</Authors>
         <RootNamespace>Our.Umbraco.XMLSitemap</RootNamespace>
+        <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
@@ -27,5 +30,10 @@
         </None>
         <None Remove="Migrations\package.zip" />
         <EmbeddedResource Include="Migrations\package.zip" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="..\LICENSE.md" Pack="true" PackagePath=""/>
+        <None Include="..\README.md" Pack="true" PackagePath=""/>
     </ItemGroup>
 </Project>

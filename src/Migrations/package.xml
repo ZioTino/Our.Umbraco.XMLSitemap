@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<umbPackage>
+  <info>
+    <package>
+      <name>Our.Umbraco.XMLSitemap</name>
+    </package>
+  </info>
+  <DocumentTypes>
+    <DocumentType Folders="Compositions" FolderKeys="cbcebf3f-d5e0-4e2f-bddd-6a4e2c4385a5">
+      <Info>
+        <Name>XMLSitemapSettings</Name>
+        <Alias>xmlSitemapSettings</Alias>
+        <Key>9e3ab6aa-f6ce-4c4f-9f5f-ca4e42decd92</Key>
+        <Icon>icon-sitemap color-grey</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description />
+        <AllowAtRoot>False</AllowAtRoot>
+        <IsListView>False</IsListView>
+        <IsElement>False</IsElement>
+        <Variations>Nothing</Variations>
+        <Compositions />
+        <AllowedTemplates />
+        <DefaultTemplate></DefaultTemplate>
+      </Info>
+      <Structure />
+      <GenericProperties>
+        <GenericProperty>
+          <Name>#XMLSitemap.Hide.Title</Name>
+          <Alias>XMLSitemapHide</Alias>
+          <Key>ec4e6afe-584e-405a-a1e1-b97e76be0929</Key>
+          <Type>Umbraco.TrueFalse</Type>
+          <Definition>baad5379-0c1e-437d-9987-6e9f0fd69ccd</Definition>
+          <Tab Alias="xmlSitemap">XML Sitemap</Tab>
+          <SortOrder>0</SortOrder>
+          <Mandatory>False</Mandatory>
+          <LabelOnTop>False</LabelOnTop>
+          <Description><![CDATA[#XMLSitemap.Hide.Description]]></Description>
+          <Variations>Nothing</Variations>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>#XMLSitemap.Changefreq.Title</Name>
+          <Alias>XMLSitemapChangefreq</Alias>
+          <Key>ec781bb5-150a-4c25-8519-0c91672957b8</Key>
+          <Type>Umbraco.DropDown.Flexible</Type>
+          <Definition>067360ef-0463-4c51-9be9-a250a7b48c04</Definition>
+          <Tab Alias="xmlSitemap">XML Sitemap</Tab>
+          <SortOrder>1</SortOrder>
+          <Mandatory>False</Mandatory>
+          <LabelOnTop>False</LabelOnTop>
+          <Description><![CDATA[#XMLSitemap.Changefreq.Description]]></Description>
+          <Variations>Nothing</Variations>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>#XMLSitemap.Priority.Title</Name>
+          <Alias>XMLSitemapPriority</Alias>
+          <Key>7da8651b-de66-49b4-83cc-02a50ca51062</Key>
+          <Type>Umbraco.Slider</Type>
+          <Definition>d9083e6d-34c1-4b46-b15b-3b32293378c0</Definition>
+          <Tab Alias="xmlSitemap">XML Sitemap</Tab>
+          <SortOrder>2</SortOrder>
+          <Mandatory>False</Mandatory>
+          <LabelOnTop>False</LabelOnTop>
+          <Description><![CDATA[#XMLSitemap.Priority.Description]]></Description>
+          <Variations>Nothing</Variations>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>74</Id>
+          <Key>75135caa-671c-4633-8c69-62e25706895f</Key>
+          <Type>Tab</Type>
+          <Caption>XML Sitemap</Caption>
+          <Alias>xmlSitemap</Alias>
+          <SortOrder>0</SortOrder>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+    <DocumentType>
+      <Info>
+        <Name>XMLSitemap</Name>
+        <Alias>XMLSitemap</Alias>
+        <Key>e456707b-1caf-43ea-b241-06bc0da778af</Key>
+        <Icon>icon-sitemap color-grey</Icon>
+        <Thumbnail>folder.png</Thumbnail>
+        <Description />
+        <AllowAtRoot>True</AllowAtRoot>
+        <IsListView>False</IsListView>
+        <IsElement>False</IsElement>
+        <Variations>Culture</Variations>
+        <Compositions />
+        <AllowedTemplates />
+        <DefaultTemplate></DefaultTemplate>
+      </Info>
+      <Structure />
+      <GenericProperties>
+        <GenericProperty>
+          <Name>#XMLSitemap.Excluded.Title</Name>
+          <Alias>XMLSitemapExcludedDocTypes</Alias>
+          <Key>acdf09a5-9062-4c2a-b328-cfd2563eaf0e</Key>
+          <Type>Umbraco.TextBox</Type>
+          <Definition>d39ce316-25ca-4732-b4c7-6514b7a952d0</Definition>
+          <Tab Alias="xmlSitemapSettings">XML Sitemap Settings</Tab>
+          <SortOrder>0</SortOrder>
+          <Mandatory>False</Mandatory>
+          <LabelOnTop>False</LabelOnTop>
+          <Description><![CDATA[#XMLSitemap.Excluded.Description]]></Description>
+          <Variations>Nothing</Variations>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>#XMLSitemap.RootNode.Title</Name>
+          <Alias>XMLSitemapRootNode</Alias>
+          <Key>8ce87b41-c442-41fc-bcc4-3004ab4d2686</Key>
+          <Type>Umbraco.ContentPicker</Type>
+          <Definition>5e51d07a-67c7-4456-a500-c0bdee8b5fd7</Definition>
+          <Tab Alias="xmlSitemapSettings">XML Sitemap Settings</Tab>
+          <SortOrder>1</SortOrder>
+          <Mandatory>False</Mandatory>
+          <LabelOnTop>False</LabelOnTop>
+          <Description><![CDATA[#XMLSitemap.RootNode.Description]]></Description>
+          <Variations>Culture</Variations>
+        </GenericProperty>
+        <GenericProperty>
+          <Name>#XMLSitemap.ChangefreqDefault.Title</Name>
+          <Alias>XMLSitemapChangefreqDefault</Alias>
+          <Key>01f2e1c1-4795-4336-9642-5bb1426d9a9a</Key>
+          <Type>Umbraco.DropDown.Flexible</Type>
+          <Definition>067360ef-0463-4c51-9be9-a250a7b48c04</Definition>
+          <Tab Alias="xmlSitemapSettings">XML Sitemap Settings</Tab>
+          <SortOrder>2</SortOrder>
+          <Mandatory>False</Mandatory>
+          <LabelOnTop>False</LabelOnTop>
+          <Description><![CDATA[#XMLSitemap.Changefreq.Description]]></Description>
+          <Variations>Culture</Variations>
+        </GenericProperty>
+      </GenericProperties>
+      <Tabs>
+        <Tab>
+          <Id>75</Id>
+          <Key>77e96b49-c054-4590-96f9-da3d21fc1c7f</Key>
+          <Type>Group</Type>
+          <Caption>XML Sitemap Settings</Caption>
+          <Alias>xmlSitemapSettings</Alias>
+          <SortOrder>0</SortOrder>
+        </Tab>
+      </Tabs>
+    </DocumentType>
+  </DocumentTypes>
+  <MediaTypes />
+  <Templates />
+  <Stylesheets />
+  <Scripts />
+  <PartialViews />
+  <Macros />
+  <MacroPartialViews />
+  <DictionaryItems>
+    <DictionaryItem Key="5e37e726-f492-419b-86b4-1bae1339b2ef" Name="Our.Umbraco.XMLSitemap">
+      <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[Our.Umbraco.XMLSitemap]]></Value>
+      <Value LanguageId="2" LanguageCultureAlias="da-DK"><![CDATA[Our.Umbraco.XMLSitemap]]></Value>
+      <Value LanguageId="3" LanguageCultureAlias="fr-FR"><![CDATA[Our.Umbraco.XMLSitemap]]></Value>
+      <Value LanguageId="4" LanguageCultureAlias="it-IT"><![CDATA[Our.Umbraco.XMLSitemap]]></Value>
+      <Value LanguageId="5" LanguageCultureAlias="de-DE"><![CDATA[Our.Umbraco.XMLSitemap]]></Value>
+      <DictionaryItem Key="b4eafbd8-b751-42cd-9d0d-37762066663a" Name="XMLSitemap.Changefreq.Description">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[How often the content of this page changes, for Google site map, if left blank will inherit the setting for the section.]]></Value>
+        <Value LanguageId="2" LanguageCultureAlias="da-DK"><![CDATA[Hvor ofte indholdet på denne side ændres, for google site map, hvis venstre tomt vil arve indstillingen for sektionen.]]></Value>
+        <Value LanguageId="3" LanguageCultureAlias="fr-FR"><![CDATA[À quelle fréquence le contenu de cette page change, pour le plan du site google, si laissé vide, héritera du paramètre de la section.]]></Value>
+        <Value LanguageId="4" LanguageCultureAlias="it-IT"><![CDATA[Con quale frequenza cambia il contenuto di questa pagina, per la mappa del sito di Google. Se lasciato vuoto erediterà l'impostazione per la sezione.]]></Value>
+        <Value LanguageId="5" LanguageCultureAlias="de-DE"><![CDATA[Wie oft sich der Inhalt dieser Seite ändert, für Google Sitemap, wenn leer gelassen wird die Einstellung für den Abschnitt übernommen.]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="8807b254-337d-420e-ac03-85d8175cd26c" Name="XMLSitemap.Changefreq.Title">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[Change frequency]]></Value>
+        <Value LanguageId="2" LanguageCultureAlias="da-DK"><![CDATA[Skift frekvens]]></Value>
+        <Value LanguageId="3" LanguageCultureAlias="fr-FR"><![CDATA[Changer de fréquence]]></Value>
+        <Value LanguageId="4" LanguageCultureAlias="it-IT"><![CDATA[Frequenza di aggiornamento]]></Value>
+        <Value LanguageId="5" LanguageCultureAlias="de-DE"><![CDATA[Frequenz ändern]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="0918558b-0f90-42db-a924-7f8bfee8fa97" Name="XMLSitemap.Excluded.Description">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[A comma delimited list of document type alias to exclude from the XML Sitemap.]]></Value>
+        <Value LanguageId="2" LanguageCultureAlias="da-DK"><![CDATA[En kommasepareret liste over dokumenttypealias, der skal udelukkes fra XML-sitemap.]]></Value>
+        <Value LanguageId="3" LanguageCultureAlias="fr-FR"><![CDATA[Une liste délimitée par des virgules d'alias de type de document à exclure du plan de site XML.]]></Value>
+        <Value LanguageId="4" LanguageCultureAlias="it-IT"><![CDATA[Un elenco delimitato da virgola di alias del tipo di documento da escludere dalla Sitemap XML.]]></Value>
+        <Value LanguageId="5" LanguageCultureAlias="de-DE"><![CDATA[Eine durch Kommas getrennte Liste von Dokumenttyp-Alias, die von der XML-Sitemap ausgeschlossen werden sollen.]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="cde63c41-f7e6-423d-a18e-d1b99380f15d" Name="XMLSitemap.Excluded.Title">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[Excluded Document Types]]></Value>
+        <Value LanguageId="2" LanguageCultureAlias="da-DK"><![CDATA[Udelukkede dokumenttyper]]></Value>
+        <Value LanguageId="3" LanguageCultureAlias="fr-FR"><![CDATA[Types de documents exclus]]></Value>
+        <Value LanguageId="4" LanguageCultureAlias="it-IT"><![CDATA[Tipi di documento da escludere]]></Value>
+        <Value LanguageId="5" LanguageCultureAlias="de-DE"><![CDATA[Ausgeschlossene Dokumenttypen]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="36b8e57b-a5df-4255-bf9e-1fcfcd3a6e48" Name="XMLSitemap.Hide.Description">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[Hide this content from the XML Sitemap.]]></Value>
+        <Value LanguageId="2" LanguageCultureAlias="da-DK"><![CDATA[Skjul dette indhold fra XML-sitemappet.]]></Value>
+        <Value LanguageId="3" LanguageCultureAlias="fr-FR"><![CDATA[Masquez ce contenu du plan du site XML.]]></Value>
+        <Value LanguageId="4" LanguageCultureAlias="it-IT"><![CDATA[Nasconde questo contenuto dalla XML Sitemap.]]></Value>
+        <Value LanguageId="5" LanguageCultureAlias="de-DE"><![CDATA[Diesen Inhalt aus der XML-Sitemap ausblenden.]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="b14d101a-d5ba-4532-9f9f-4db8c886bbbd" Name="XMLSitemap.Hide.Title">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[Hide from Sitemap]]></Value>
+        <Value LanguageId="2" LanguageCultureAlias="da-DK"><![CDATA[Skjul fra Sitemap]]></Value>
+        <Value LanguageId="3" LanguageCultureAlias="fr-FR"><![CDATA[Masquer du Sitemap]]></Value>
+        <Value LanguageId="4" LanguageCultureAlias="it-IT"><![CDATA[Nascondi dalla Sitemap]]></Value>
+        <Value LanguageId="5" LanguageCultureAlias="de-DE"><![CDATA[Aus Sitemap ausblenden]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="86071867-be42-403c-b16e-84c5e43e658a" Name="XMLSitemap.Priority.Description">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[Relative priority of this page between 0.1 and 1.0, where 1.0 is the most important page on the site and 0.1 isn't.]]></Value>
+        <Value LanguageId="2" LanguageCultureAlias="da-DK"><![CDATA[Relativ prioritet af denne side mellem 0.1 og 1.0, hvor 1.0 er den vigtigste side på webstedet, og 0.1 ikke er det.]]></Value>
+        <Value LanguageId="3" LanguageCultureAlias="fr-FR"><![CDATA[Priorité relative de cette page entre 0,1 et 1,0, où 1,0 est la page la plus importante du site et 0,1 ne l'est pas.]]></Value>
+        <Value LanguageId="4" LanguageCultureAlias="it-IT"><![CDATA[Priorità relativa di questa pagina tra 0.1 e 1.0, dove 1.0 è la pagina più importante del sito e 0.1 non lo è.]]></Value>
+        <Value LanguageId="5" LanguageCultureAlias="de-DE"><![CDATA[Relative Priorität dieser Seite zwischen 0.1 und 1.0, wobei 1.0 die wichtigste Seite der Site ist und 0.1 nicht.]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="e5d66d82-6276-4615-9493-639a9ef0c94e" Name="XMLSitemap.Priority.Title">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[Relative priority]]></Value>
+        <Value LanguageId="2" LanguageCultureAlias="da-DK"><![CDATA[Relativ prioritet]]></Value>
+        <Value LanguageId="3" LanguageCultureAlias="fr-FR"><![CDATA[Priorité relative]]></Value>
+        <Value LanguageId="4" LanguageCultureAlias="it-IT"><![CDATA[Priorità relativa]]></Value>
+        <Value LanguageId="5" LanguageCultureAlias="de-DE"><![CDATA[Relative Priorität]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="0a9670d8-648f-43fe-bbf1-064e648eb191" Name="XMLSitemap.RootNode.Description">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[The main node from which to start the XML Sitemap. This node is usually a top-level node or a node that has a hostname set.]]></Value>
+        <Value LanguageId="2" LanguageCultureAlias="da-DK"><![CDATA[Hovedknudepunktet, hvorfra XML-sitemap'et skal startes. Denne node er normalt en node på øverste niveau eller en node, der har et værtsnavnsæt.]]></Value>
+        <Value LanguageId="3" LanguageCultureAlias="fr-FR"><![CDATA[Le nœud principal à partir duquel démarrer le plan de site XML. Ce nœud est généralement un nœud de niveau supérieur ou un nœud dont le nom d'hôte est défini.]]></Value>
+        <Value LanguageId="4" LanguageCultureAlias="it-IT"><![CDATA[Il nodo principale da cui far partire la XML Sitemap. Solitamente questo nodo è un nodo di primo livello oppure un nodo a cui è stato impostato un hostname.]]></Value>
+        <Value LanguageId="5" LanguageCultureAlias="de-DE"><![CDATA[Der Hauptknoten, von dem aus die XML-Sitemap gestartet werden soll. Dieser Knoten ist normalerweise ein Knoten der obersten Ebene oder ein Knoten mit einem festgelegten Hostnamen.]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="821d3064-f861-426d-9d62-0d60da9ecf04" Name="XMLSitemap.RootNode.Title">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[Root Node]]></Value>
+        <Value LanguageId="2" LanguageCultureAlias="da-DK"><![CDATA[Root Node]]></Value>
+        <Value LanguageId="3" LanguageCultureAlias="fr-FR"><![CDATA[Noeud principal]]></Value>
+        <Value LanguageId="4" LanguageCultureAlias="it-IT"><![CDATA[Nodo principale]]></Value>
+        <Value LanguageId="5" LanguageCultureAlias="de-DE"><![CDATA[Wurzelknoten]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="8807b254-337d-420e-ac03-11d8175cd26c" Name="XMLSitemap.ChangefreqDefault.Title">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[Default Change frequency]]></Value>
+        <Value LanguageId="2" LanguageCultureAlias="da-DK"><![CDATA[Default Skift frekvens]]></Value>
+        <Value LanguageId="3" LanguageCultureAlias="fr-FR"><![CDATA[Default Changer de fréquence]]></Value>
+        <Value LanguageId="4" LanguageCultureAlias="it-IT"><![CDATA[Frequenza di aggiornamentodi default]]></Value>
+        <Value LanguageId="5" LanguageCultureAlias="de-DE"><![CDATA[Default Frequenz ändern]]></Value>
+      </DictionaryItem>
+      <DictionaryItem Key="b4eafbd8-b751-42cd-9d0d-12762066663a" Name="XMLSitemap.ChangefreqDefault.Description">
+        <Value LanguageId="1" LanguageCultureAlias="en-US"><![CDATA[The default value how often the content of this page changes, for Google site map, if left blank will inherit the setting for the section.]]></Value>
+        <Value LanguageId="2" LanguageCultureAlias="da-DK"><![CDATA[Standardværdien, hvor ofte indholdet på denne side ændres, for Googles sitemap. Hvis det efterlades tomt, vil det arve indstillingen for sektionen]]></Value>
+        <Value LanguageId="3" LanguageCultureAlias="fr-FR"><![CDATA[La valeur par défaut de la fréquence à laquelle le contenu de cette page change, pour le sitemap Google. Si laissé vide, il héritera du réglage de la section.]]></Value>
+        <Value LanguageId="4" LanguageCultureAlias="it-IT"><![CDATA[Il valore di default con quale frequenza cambia il contenuto di questa pagina, per la mappa del sito di Google. Se lasciato vuoto erediterà l'impostazione per la sezione.]]></Value>
+        <Value LanguageId="5" LanguageCultureAlias="de-DE"><![CDATA[Der Standardwert, wie oft sich der Inhalt dieser Seite ändert, für die Google-Sitemap. Wenn es leer gelassen wird, erbt es die Einstellung für den Abschnitt.]]></Value>
+      </DictionaryItem>
+    </DictionaryItem>
+  </DictionaryItems>
+  <Languages>
+    <Language Id="4" CultureAlias="it-IT" FriendlyName="Italian (Italy)" />
+    <Language Id="5" CultureAlias="de-DE" FriendlyName="German (Germany)" />
+    <Language Id="3" CultureAlias="fr-FR" FriendlyName="French (France)" />
+    <Language Id="1" CultureAlias="en-US" FriendlyName="English (United States)" />
+    <Language Id="2" CultureAlias="da-DK" FriendlyName="Danish (Denmark)" />
+  </Languages>
+  <DataTypes>
+    <DataType Name="XMLSitemap.Changefreq" Id="Umbraco.DropDown.Flexible" Definition="067360ef-0463-4c51-9be9-a250a7b48c04" DatabaseType="Nvarchar" Configuration="{&quot;multiple&quot;:false,&quot;items&quot;:[{&quot;id&quot;:1,&quot;value&quot;:&quot;always&quot;},{&quot;id&quot;:2,&quot;value&quot;:&quot;hourly&quot;},{&quot;id&quot;:3,&quot;value&quot;:&quot;daily&quot;},{&quot;id&quot;:4,&quot;value&quot;:&quot;weekly&quot;},{&quot;id&quot;:5,&quot;value&quot;:&quot;monthly&quot;},{&quot;id&quot;:6,&quot;value&quot;:&quot;yearly&quot;},{&quot;id&quot;:7,&quot;value&quot;:&quot;never&quot;}]}" Folders="Our.Umbraco.XMLSitemap" FolderKeys="8952b206-d010-4e4a-8ade-45f56cac8bd9" />
+    <DataType Name="XMLSitemap.Excluded" Id="Umbraco.TextBox" Definition="d39ce316-25ca-4732-b4c7-6514b7a952d0" DatabaseType="Nvarchar" Configuration="{}" Folders="Our.Umbraco.XMLSitemap" FolderKeys="8952b206-d010-4e4a-8ade-45f56cac8bd9" />
+    <DataType Name="XMLSitemap.Hide" Id="Umbraco.TrueFalse" Definition="baad5379-0c1e-437d-9987-6e9f0fd69ccd" DatabaseType="Integer" Configuration="{&quot;default&quot;:false,&quot;showLabels&quot;:false,&quot;labelOn&quot;:null,&quot;labelOff&quot;:null}" Folders="Our.Umbraco.XMLSitemap" FolderKeys="8952b206-d010-4e4a-8ade-45f56cac8bd9" />
+    <DataType Name="XMLSitemap.Priority" Id="Umbraco.Slider" Definition="d9083e6d-34c1-4b46-b15b-3b32293378c0" DatabaseType="Nvarchar" Configuration="{&quot;enableRange&quot;:false,&quot;initVal1&quot;:0.9,&quot;initVal2&quot;:0.0,&quot;minVal&quot;:0.1,&quot;maxVal&quot;:1.0,&quot;step&quot;:0.1}" Folders="Our.Umbraco.XMLSitemap" FolderKeys="8952b206-d010-4e4a-8ade-45f56cac8bd9" />
+    <DataType Name="XMLSitemap.RootNode" Id="Umbraco.ContentPicker" Definition="5e51d07a-67c7-4456-a500-c0bdee8b5fd7" DatabaseType="Nvarchar" Configuration="{&quot;showOpenButton&quot;:false,&quot;startNodeId&quot;:null,&quot;ignoreUserStartNodes&quot;:true}" Folders="Our.Umbraco.XMLSitemap" FolderKeys="8952b206-d010-4e4a-8ade-45f56cac8bd9" />
+  </DataTypes>
+  <MediaItems />
+</umbPackage>

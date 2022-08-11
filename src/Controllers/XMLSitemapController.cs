@@ -20,7 +20,8 @@ namespace Our.Umbraco.XMLSitemap.Controllers
     public class XMLSitemapController : RenderController
     {
         private IPublishedContent _rootNode;
-        private string _excludedDocumentTypes;
+        private string[] _excludedDocumentTypes;
+        private string _changeFreqDefault;
 
         public XMLSitemapController(
             ILogger<RenderController> logger, 
@@ -32,27 +33,29 @@ namespace Our.Umbraco.XMLSitemap.Controllers
 
         public override IActionResult Index()
         {
+            if(!CurrentPage.HasProperty(Constants.Configuration.SitemapRootNodeDataTypeName)){
+                throw new ArgumentNullException("The DocumentType XMLSitemap must have the property "+Constants.Configuration.SitemapRootNodeDataTypeName+"!");
+            }
+            if(!CurrentPage.HasProperty(Constants.Configuration.SitemapExcludedDocTypesDataTypeName)){
+                throw new ArgumentNullException("The DocumentType XMLSitemap must have the property "+Constants.Configuration.SitemapExcludedDocTypesDataTypeName+"!");
+            }
+            if(!CurrentPage.HasProperty(Constants.Configuration.SitemapChangeFreqDefaultDataTypeName)){
+                throw new ArgumentNullException("The DocumentType XMLSitemap must have the property "+Constants.Configuration.SitemapChangeFreqDefaultDataTypeName+"!");
+            }
+
+            _changeFreqDefault = CurrentPage.Value<string>(Constants.Configuration.SitemapChangeFreqDefaultDataTypeName);
+            if(string.IsNullOrWhiteSpace(_changeFreqDefault))_changeFreqDefault="weekly";
+
             _rootNode = CurrentPage.Value<IPublishedContent>(Constants.Configuration.SitemapRootNodeDataTypeName);
             if (_rootNode == null)
                 throw new ArgumentNullException("The Root Node value must be set for the XML Sitemap!");
 
-            _excludedDocumentTypes = CurrentPage.Value<string>(Constants.Configuration.SitemapExcludedDocTypesDataTypeName).ToLower();
+            _excludedDocumentTypes = CurrentPage.Value<string>(Constants.Configuration.SitemapExcludedDocTypesDataTypeName).ToLower().Replace(" ",";").Replace(",",";").Split(';');
 
             XmlSitemap sitemap = new XmlSitemap();
-            if (!string.IsNullOrWhiteSpace(_excludedDocumentTypes))
-            {
-                // If there are some document types inside the excluded ones
-                // I have to check if the rootNode type is included in one of those.
-                if (!_excludedDocumentTypes.Contains(_rootNode.ContentType.Alias))
-                {
-                    sitemap.Items.AddRange(GetXmlSitemapAllowedSelfAndChildren(_rootNode, true));  
-                }
-            }
-            else
-            {
+            if(_rootNode.IsIncludedInSitemap(_excludedDocumentTypes)){
                 sitemap.Items.AddRange(GetXmlSitemapAllowedSelfAndChildren(_rootNode, true));
             }
-
             string result;
             StringBuilder sb = new StringBuilder();
             XmlSerializer serializer = new XmlSerializer(typeof(XmlSitemap));
@@ -73,28 +76,17 @@ namespace Our.Umbraco.XMLSitemap.Controllers
         private List<XmlSitemapItem> GetXmlSitemapAllowedSelfAndChildren(IPublishedContent item, bool rootNode = false)
         {
             var result = new List<XmlSitemapItem>();
-            if (rootNode && item.IsPublished() && item.IsIncludedInSitemap() && !string.IsNullOrWhiteSpace(item.UrlSegment))
+           
+            result.Add(new XmlSitemapItem()
             {
-                result.Add(new XmlSitemapItem()
-                {
-                   Location = item.Url(item.GetCultureFromDomains(), UrlMode.Absolute),
-                   LastModified = item.UpdateDate,
-                   Priority = item.Value<decimal>(Constants.Configuration.SitemapPriorityDataTypeName),
-                   ChangeFrequency = string.IsNullOrWhiteSpace(item.Value<string>(Constants.Configuration.SitemapChangeFreqDataTypeName)) ? "default" : item.Value<string>(Constants.Configuration.SitemapChangeFreqDataTypeName)
-                });
-            }
-            else
-            {
-                result.Add(new XmlSitemapItem()
-                {
-                   Location = item.Url(item.GetCultureFromDomains(), UrlMode.Absolute),
-                   LastModified = item.UpdateDate,
-                   Priority = item.Value<decimal>(Constants.Configuration.SitemapPriorityDataTypeName),
-                   ChangeFrequency = string.IsNullOrWhiteSpace(item.Value<string>(Constants.Configuration.SitemapChangeFreqDataTypeName)) ? "default" : item.Value<string>(Constants.Configuration.SitemapChangeFreqDataTypeName)
-                });
-            }
+                Location = item.Url(item.GetCultureFromDomains(), UrlMode.Absolute),
+                LastModified = item.UpdateDate,
+                Priority = item.Value<decimal>(Constants.Configuration.SitemapPriorityDataTypeName),
+                ChangeFrequency = string.IsNullOrWhiteSpace(item.Value<string>(Constants.Configuration.SitemapChangeFreqDataTypeName)) ? _changeFreqDefault : item.Value<string>(Constants.Configuration.SitemapChangeFreqDataTypeName)
+            });
             
-            IEnumerable<IPublishedContent> childrens = item.Children().Where(x => x.IsPublished() && item.IsIncludedInSitemap() && !string.IsNullOrWhiteSpace(item.UrlSegment));
+            IEnumerable<IPublishedContent> childrens = item.Children().Where(x => x.IsPublished() && x.IsIncludedInSitemap(_excludedDocumentTypes) && !string.IsNullOrWhiteSpace(x.UrlSegment));
+            
             if (childrens.Any())
                 foreach (IPublishedContent children in childrens)
                     result.AddRange(GetXmlSitemapAllowedSelfAndChildren(children, false));
