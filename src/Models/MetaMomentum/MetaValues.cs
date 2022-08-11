@@ -2,7 +2,7 @@ using System;
 using System.Xml.Serialization;
 using J2N.Collections.Generic;
 
-namespace MetaMomentum.Models
+namespace Our.Umbraco.XMLSitemap.Models
 {
     public class MetaValues
     {
